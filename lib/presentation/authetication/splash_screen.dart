@@ -33,8 +33,8 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Center(
         // make best animation for splash screen
-        //comment openion
-        //shall we use  lottie or gif for splash screen?
+        // comment openion
+        // shall we use  lottie or gif for splash screen?
 
         child: AnimatedCrossFade(
           sizeCurve: Curves.elasticIn,

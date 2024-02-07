@@ -14,7 +14,8 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    TextEditingController? userNameController, passwordController;
+    return Scaffold(
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -24,15 +25,15 @@ class LoginScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  FlutterLogo(size: 80),
-                  Text(
+                  const FlutterLogo(size: 80),
+                  const Text(
                     'Welcome to',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  Text(
+                  const Text(
                     appTitle,
                     style: TextStyle(
                       fontSize: 35,
@@ -40,49 +41,56 @@ class LoginScreen extends StatelessWidget {
                       color: Colors.amber,
                     ),
                   ),
-                  Text(
+                  const Text(
                     "The place where you can sell your scrap and your useless stuff.",
                     style: TextStyle(
                       fontSize: 18,
                     ),
                   ),
-                  Gap(
+                  const Gap(
                     height: 20,
                   ),
-                  Text(
+                  const Text(
                     "Let's Get Started...",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Gap(
+                  const Gap(
                     height: 10,
                   ),
-                  TextFieldHeading(
+                  const TextFieldHeading(
                     title: "Email",
                   ),
                   AuthTextField(
+                    // validator: ,
+                    controller: userNameController,
                     icon: Icons.person,
                     title: 'email@mail.com',
                   ),
-                  TextFieldHeading(
+                  const TextFieldHeading(
                     title: 'Password',
                   ),
+
+                  //add a eye icon to enable or disable the obscure text
                   AuthTextField(
+                    // validator: ,
+                    controller: passwordController,
+                    obscureText: true,
                     icon: CupertinoIcons.lock,
                     title: 'Password',
                   ),
-                  ForgotPasswordTxtBtn(),
-                  Gap(
+                  const ForgotPasswordTxtBtn(),
+                  const Gap(
                     height: 20,
                   ),
-                  AuthButton(),
-                  Gap(
+                  const AuthButton(),
+                  const Gap(
                     height: 20,
                   ),
-                  AuthIconButton(),
-                  AuthAlreadyHaveAccount(),
+                  const AuthIconButton(),
+                  const AuthAlreadyHaveAccount(),
                 ],
               ),
             ),
@@ -92,4 +100,3 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
-
